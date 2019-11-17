@@ -25,7 +25,7 @@ const Storage = require("@google-cloud/storage");
 global.storage = new Storage({
   keyFilename: gCloudKey
 });
-const bucketName = "<BUCKET NAME>";
+const bucketName = "MTC";
 global.storageBucket = bucketName;
 
 // Mongoose Globals
@@ -33,7 +33,7 @@ const mongoose = require("mongoose");
 const ObjectId = mongoose.Types.ObjectId;
 
 mongoose.connect(
-  "mongodb://localhost:27017/wohligFramework?readPreference=primary",
+  "mongodb://localhost:27017/mtc?readPreference=primary",
   {
     readPreference: "secondaryPreferred",
     connectTimeoutMS: 600000,
@@ -46,7 +46,7 @@ mongoose.connect(
       // 104.155.238.145
       console.log(err);
     } else {
-      console.log("Database Connected to Absolute");
+      console.log("Database Connected to MTC");
       // setupGFS();
     }
   }
@@ -124,6 +124,6 @@ app.get("/api/upload/readFile", function(req, res) {
 });
 
 app.get("/", function(req, res) {
-  res.send("Google Cloud File Upload");
+  res.send("MTC File Upload");
 });
 app.listen(1330);
