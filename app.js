@@ -25,7 +25,7 @@ const Storage = require("@google-cloud/storage");
 global.storage = new Storage({
   keyFilename: gCloudKey
 });
-const bucketName = "MTC";
+const bucketName = "mtc-mcup";
 global.storageBucket = bucketName;
 
 // Mongoose Globals
