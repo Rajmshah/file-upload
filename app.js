@@ -21,7 +21,7 @@ app.use(
 );
 
 const gCloudKey = "./storage.json";
-const Storage = require("@google-cloud/storage");
+const { Storage } = require("@google-cloud/storage");
 global.storage = new Storage({
   keyFilename: gCloudKey
 });
